@@ -1,0 +1,25 @@
+.filter__input {
+    height: 20px;
+    width: 250px;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: 500;
+        transition: box-shadow 0.3s ease-in-out;
+        background-color: #eddff0;
+    
+}    
+.filter__input:hover,
+.filter__input:focus {
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.filter__label { 
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 20px;
+justify-content: space-between;
+font-weight: 500;
+ text-transform: uppercase;
+ }

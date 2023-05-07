@@ -1,0 +1,59 @@
+.contactForm {
+    display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 10px;
+        font-weight: 500;
+}
+
+.contactForm__label {
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
+        width: 100%;
+        font-weight: 500;
+        text-transform: uppercase;
+
+}
+.contactForm__input {
+    height: 20px;
+    width: 300px;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: 500;
+        background-color: #eddff0;
+        transition: box-shadow 0.3s ease-in-out;
+    
+}
+.contactForm__input:hover,
+.contactForm__input:focus {
+    background-color: #eddff0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.contactForm__button {
+font-size: 17px;
+    font-weight: 700;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #c7c7c7;
+    border-radius: 10px;
+    color: black;
+    background-color:#eddff0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.contactForm__button:hover,
+.contactForm__button:focus {
+    background-color: rgb(28, 144, 190);
+        color: #fff;
+}
