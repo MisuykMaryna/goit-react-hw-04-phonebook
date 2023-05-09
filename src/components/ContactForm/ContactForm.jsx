@@ -1,39 +1,46 @@
-import React, { Component } from 'react';
+import { useState} from 'react';
 import css from './ContactForm.module.css';
 
 
-export class ContactForm extends Component { 
-    state = {
-  name: '',
-  number: ''
+export function ContactForm ({ onSubmit }) { 
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+
+  const handelChange = e => {
+    const { value, name } = e.target;
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+
+      case 'number':
+        setNumber(value);
+        break;
+
+      default:
+        return;
     }
-
-   handelChange = e => {
-    const { name, value } = e.currentTarget;
-    this.setState({ [name]: value });
   };
 
 
-handleSubmit = e => {
+const handleSubmit = e => {
     e.preventDefault();
-    const { name, number } = this.state;
-    this.props.onSubmit({name, number});
+   onSubmit({name, number});
 
-    this.reset();
+    reset();
   };
 
-  reset = () => {
-    this.setState({ name: '', number: '' });
+   const reset = () => {
+     setName('');
+     setNumber('');
+     
   };
-
-
-render() {
-    const { name, number } = this.state;
+  
     return (
-        <form className={css.contactForm} onSubmit={this.handleSubmit}>
+        <form className={css.contactForm} onSubmit={handleSubmit}>
           <label className={css.contactForm__label}>Name<input
   className={css.contactForm__input}
-  onChange={this.handelChange}
+  onChange={handelChange}
   type="text"
   name="name"
   value={name}
@@ -44,7 +51,7 @@ render() {
         /></label>
           <label className={css.contactForm__label}>Number<input
   className={css.contactForm__input}
-  onChange={this.handelChange}
+  onChange={handelChange}
   type="tel"
   name="number"
   value={number}
@@ -57,7 +64,7 @@ render() {
         <button className={css.contactForm__button} type="submit">Add contact</button>
         </form>
     );
-  };
+  }
     
-}
+
 
