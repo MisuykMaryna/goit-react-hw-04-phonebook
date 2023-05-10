@@ -9,11 +9,10 @@ import { nanoid } from 'nanoid';
 export function App () {
 
   const [contacts, setContacts] = useState(
-    () => JSON.parse(localStorage.getItem('contacts')) || Contacts
-  );
+    () => JSON.parse(window.localStorage.getItem('contacts')) ?? Contacts);
   const [filter, setFilter] = useState('');
 
-  useEffect(() => { localStorage.setItem('contacts', JSON.stringify(contacts))},
+  useEffect(() => { window.localStorage.setItem('contacts', JSON.stringify(contacts))},
     [contacts])
   
 
